@@ -1,7 +1,6 @@
 from selenium import webdriver
 
-driver = webdriver.Chrome()
-driver.implicitly_wait(30)
+driver = webdriver.PhantomJS()
 # print("Select Category:")
 # print("")
 # print("1. Popular")
@@ -29,8 +28,13 @@ driver.get("https://www.webnovel.com/popular")
 # if x == 7:
 	# driver.get("https://www.webnovel.com/popular/other")
 	
-elem = driver.find_elements_by_css_selector(".c_strong" )
+elem = driver.find_elements_by_css_selector(".c_strong")
 result = [{"link": category.get_attribute("href"), "text": category.get_attribute("data-bid")}
 for category in elem]
 
-print(result)
+result = result[::3]
+	
+print(new_result)
+
+for i in new_result:
+	print(i["text"])
