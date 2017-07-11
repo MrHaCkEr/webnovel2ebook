@@ -49,6 +49,7 @@ for i in result:
 #Gets chapter Names and links
 select = int(input("Which Novel do you want to read?: "))
 website = result[select - 1]["link"]
+print("Getting Chapter names and links...")
 driver.get(website)
 popup = driver.find_element_by_css_selector("a[href='#contentsModal']")
 popup.click()
