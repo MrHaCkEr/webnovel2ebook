@@ -13,6 +13,7 @@ for category in elem]
 amountChapters = len(result) - 1
 
 print ("There are currently " + str(amountChapters) + " available")
-x = input("What Chapter do you want to read?")
-container = result[int(x) - 1]
-print (container["text"])
+#x = input("What Chapter do you want to read?")
+#container = result[int(x) - 1]
+#print (container["text"])
+
