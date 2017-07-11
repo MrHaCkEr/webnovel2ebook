@@ -1,4 +1,5 @@
 from selenium import webdriver
+import getify
 import time
 
 print("Select Category:")
@@ -10,6 +11,8 @@ print("4. Fantasy")
 print("5. Sci-Fi")
 print("6. Modern")
 print("7. Other")
+print("8. New Arrivals | Top 30")
+print("9. More then 200 Chapters")
 
 website = None
 x = int(input("Select a category: "))
@@ -27,6 +30,10 @@ elif x == 6:
 	website = "https://www.webnovel.com/popular/modern"
 elif x == 7:
 	website = "https://www.webnovel.com/popular/other"
+elif x == 8:
+	website = "https://www.webnovel.com/newArrivals"
+elif x == 9:
+	website = "https://www.webnovel.com/matureBooks"
 	
 #Initializes webdriver
 print("Getting Data...")
@@ -40,11 +47,11 @@ for category in elem]
 result = result[::3]
 	
 # Sorts and makes the data look kinda pretty
-x = 1
+g = 1
 for i in result:
-	print(str(x) + ". ", end="")
+	print(str(g) + ". ", end="")
 	print(i["text"])
-	x += 1
+	g += 1
 	
 #Gets chapter Names and links
 select = int(input("Which Novel do you want to read?: "))
@@ -62,5 +69,15 @@ print ("There are currently " + str(len(chlist)) + " available")
 startingChapter = int(input("What's the starting Chapter?: "))
 endingChapter = int(input("What's the ending Chapter?: "))
 
+chlistSelection = chlist[startingChapter - 1 : endingChapter]
 
+file_list = []
+for q in range(len(chlistSelection)):
+	getify.download(chlistSelection[q]["link"], str(q))
+	getify.clean(str(q))
+	file_list.append(str(q) + "m" + ".xhtml")
+	getify.update_progress(q/len(chlistSelection))
+	
+getify.generate(file_list, result[select - 1]["text"], "PlaceHolder", chlistSelection, str(startingChapter), str(endingChapter))
+	
 driver.save_screenshot('screenie.png')
