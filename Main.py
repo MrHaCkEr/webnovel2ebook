@@ -79,5 +79,3 @@ for q in range(len(chlistSelection)):
 	getify.update_progress(q/len(chlistSelection))
 	
 getify.generate(file_list, result[select - 1]["text"], "PlaceHolder", chlistSelection, str(startingChapter), str(endingChapter))
-	
-driver.save_screenshot('screenie.png')

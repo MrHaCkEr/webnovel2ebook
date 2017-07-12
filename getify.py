@@ -29,6 +29,8 @@ def clean(filename):
 		[s.extract() for s in pretext('script')]
 		for div in pretext("div", {"class":"g_ad_ph"}):
 			div.decompose()
+		for div in pretext("div", {"class":"cha-bts"}):
+			div.decompose()
 		pretext = str(pretext)
 				
 	file = open(filename + "m" + ".xhtml", "w", encoding = "utf8")
@@ -91,7 +93,7 @@ def generate(html_files, novelname, author, chaptername, chapter_s, chapter_e):
 			%(manifest)s
 		</manifest>
 		<spine>
-			<itemref idref="toc" linear="no"/>
+			<itemref idref="toc" linear="yes"/>
 			%(spine)s
 		</spine>
 	</package>'''
@@ -146,3 +148,7 @@ def generate(html_files, novelname, author, chaptername, chapter_s, chapter_e):
 		</li>''' % (i, html_files[i], chapter)
 		
 	epub.writestr("OEBPS/toc.xhtml", toc_start % {"novelname": novelname, "toc_mid": toc_mid, "toc_end": toc_end})
+	
+	#removes all the temporary files
+	for x in html_files:
+		os.remove(x)

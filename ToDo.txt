@@ -1,0 +1,10 @@
+-Grabbing Author, Translator, Editor Information
+-Grabbing Picture for Cover
+-ReadMe Datei
+-PhantomJS Datei im Project Folder
+
+
+Known Bugs:
+- Chapternames manchmal nicht angezeigt (low priority)
+- newArrivals und matureBooks funktionieren nicht (low priority)
+- Can't download books with illigal file name chars ":"
