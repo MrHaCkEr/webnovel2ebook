@@ -66,6 +66,8 @@ def update_progress(progress):
     sys.stdout.flush()
 	
 def generate(html_files, novelname, author, chaptername, chapter_s, chapter_e):
+	if ":" in novelname:
+		novelname = "enterManuallyPlz"
 	epub = zipfile.ZipFile(novelname + "_" + chapter_s + "-" + chapter_e + ".epub", "w")
 
 	# The first file must be named "mimetype"
@@ -91,6 +93,7 @@ def generate(html_files, novelname, author, chaptername, chapter_s, chapter_e):
 		</metadata>
 		<manifest>
 			%(manifest)s
+			<item href="cover.jpg" id="cover" media-type="image/jpeg" properties="cover-image"/>
 		</manifest>
 		<spine>
 			<itemref idref="toc" linear="yes"/>
@@ -148,7 +151,9 @@ def generate(html_files, novelname, author, chaptername, chapter_s, chapter_e):
 		</li>''' % (i, html_files[i], chapter)
 		
 	epub.writestr("OEBPS/toc.xhtml", toc_start % {"novelname": novelname, "toc_mid": toc_mid, "toc_end": toc_end})
-	
+	epub.write("cover.jpg", "OEBPS/cover.jpg")
+	epub.close()
+	os.remove("cover.jpg")
 	#removes all the temporary files
 	for x in html_files:
 		os.remove(x)
