@@ -12,8 +12,6 @@ print("4. Fantasy")
 print("5. Sci-Fi")
 print("6. Modern")
 print("7. Other")
-print("8. New Arrivals | Top 30")
-print("9. More then 200 Chapters")
 
 website = None
 x = int(input("Select a category (Enter Number): "))
