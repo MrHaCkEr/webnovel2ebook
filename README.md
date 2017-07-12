@@ -1,4 +1,4 @@
-# webNove2eBook
+# webNovel2eBook
 This Python script will download chapters from novels availaible on Qidan International aka webnovel.com and saves them into the .epub format.
 
 ## Getting Started
