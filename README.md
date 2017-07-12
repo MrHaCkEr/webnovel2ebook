@@ -4,8 +4,9 @@ This Python script will download chapters from novels availaible on Qidan Intern
 ## Getting Started
 
 To run this script you'll need to have Python 3.6.1 install, which you can find [here](https://www.python.org/downloads/ "Python Download Link").
-Additionally you'll need PhantomJS since the website drowns in JavaScript, which you can find [here](http://phantomjs.org/download.html "PhantomJS Download Link").
-After downloading PhantomJS extract the zip file and copy the executeble in the bin folder into the folder the script is located in.
+
+Additionally you'll need PhantomJS, which you can find [here](http://phantomjs.org/download.html "PhantomJS Download Link").
+After downloading PhantomJS extract the zip file and copy the executeble from the bin folder into the folder the script is located in.
 
 ### Features
 
@@ -28,8 +29,9 @@ pip install selenium
 ```
 ### Usage
 
-Before running the script make sure you copied PhantomJS into the project folder
-Navigate to the folder using the console then write
+Before running the script make sure you copied PhantomJS into the project folder. If you running something else then Windows, you'll need to change the name of the PhantomJS executable in webnovel2ebook.py on line 38.
+
+Navigate to the folder using the console then write:
 
 ```
 python webnovel2ebook.py
@@ -51,8 +53,8 @@ Although the code works as far as I know there a a lot of small bugs that I have
 
 ### ToDo list
 
-- Chapternames sometimes not displayed
-- newArrivals und matureBooks doesnt't work
+- Chapternames sometimes are not displayed correctly
+- newArrivals und matureBooks don't work
 
 ## License
 
