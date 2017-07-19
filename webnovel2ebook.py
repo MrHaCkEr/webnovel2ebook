@@ -40,7 +40,7 @@ driver.get(website)
 elem = driver.find_elements_by_css_selector(".c_strong")
 result = [{"link": category.get_attribute("href"), "text": category.get_attribute("data-bid")}
 for category in elem]
-result = result[::3]
+result = result[::2]
 	
 # Sorts and makes the data look kinda pretty
 g = 1
