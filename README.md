@@ -1,3 +1,8 @@
+# THIS PROGRAM IS NO LONGER MAINTAINED
+
+## Check out [seba11998's](https://github.com/seba11998/webnovel2ebook/) for a more up do date version.
+
+
 # webNovel2eBook
 This Python script will download chapters from novels availaible on Qidan International aka webnovel.com and saves them into the .epub format.
 
