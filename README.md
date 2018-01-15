@@ -1,6 +1,6 @@
 # THIS PROGRAM IS NO LONGER MAINTAINED
 
-## Check out [seba11998's](https://github.com/seba11998/webnovel2ebook/) for a more up do date version.
+## Check out [seba11998's fork](https://github.com/seba11998/webnovel2ebook/) for a more up do date version.
 
 
 # webNovel2eBook
